@@ -26,8 +26,7 @@ namespace WpfCours.MVVM.ViewModel
         {
             RequestChangeViewCommand = new RelayCommand(HandleRequestChangeViewCommand);
             error = string.Empty;
-            ServerName = "HODOH\\SQLEXPRESS";
-            //ServerName = "<ServerName>\\SQLEXPRESS";
+            ServerName = "<ServerName>\\SQLEXPRESS";
         }
         
         public async void HandleRequestChangeViewCommand()
