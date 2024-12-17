@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="WpfCours.MVVM.View.PokedexView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfCours.MVVM.View"
+             xmlns:VM="clr-namespace:WpfCours.MVVM.ViewModel"
+             d:DataContext="{d:DesignInstance Type=VM:PokedexVM}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <!--
+       Create allias from  NameSpace
+      xmlns:VM="clr-namespace:WpfCours.MVVM.ViewModel"
+    
+      Define datacontext with the linked VM
+      d:DataContext="{d:DesignInstance Type=VM:MainViewVM}"
+    -->
+
+    <Grid>
+        <Border Background="#272727">
+            <StackPanel Name="Panel" VerticalAlignment="Center">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,15" FontSize="60" FontFamily="Comic sans ms" Foreground="#FFE3791D"><Run Language="fr-fr" Text="Pokedex"/></TextBlock>
+                <ScrollViewer Name="EntryList" Visibility="Visible" Width="400" Height="300">
+                    <StackPanel x:Name="ButtonContainer" Margin="10">
+                        
+                    </StackPanel>
+                </ScrollViewer>
+                <StackPanel Name="EntryDetails" Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Name="SelectButton" Height="75" Width="75" FontSize="12" Background="#FF464646" FontFamily="Comic sans ms" Foreground="#FFE3791D" Click="Button_Click">
+                            <Button.Content>
+                                <TextBlock TextAlignment="Center">
+                                    <Span FontSize="16">Select</Span>
+                                    <LineBreak/>
+                                    <Span>Companion!</Span>
+                                </TextBlock>
+                            </Button.Content>
+                        </Button>
+                        <Image Name="CheckedImage" Width="75" Height="75" Visibility="Collapsed" Source="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Eo_circle_orange_checkmark.svg/1024px-Eo_circle_orange_checkmark.svg.png"/>
+                        <Image Name="Pokedex_DisplayPicture" Width="200" Height="200" Source="https://img.pokemondb.net/sprites/black-white/normal/bulbasaur.png"/>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock FontSize="25" Name="Pokedex_Name" Text="Entry Name: Bulbasaur" Margin="5" FontFamily="Comic sans ms" Foreground="#FFE3791D" />
+                            <TextBlock FontSize="16" Name="Pokedex_Health" Text="Base Health: 49HP" Margin="5" FontFamily="Comic sans ms" Foreground="#FFE3791D"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <TextBlock Text="-- Spells --" HorizontalAlignment="Center" FontSize="25" FontFamily="Comic sans ms" Foreground="#FFE3791D"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Name="Attack0" Background="#FF464646" Height="45" Width="125" Margin="10" Foreground="#FFE3791D" Click="SpellClicked"/>
+                        <Button Name="Attack1" Background="#FF464646" Height="45" Width="125" Margin="10" Foreground="#FFE3791D" Click="SpellClicked"/>
+                        <Button Name="Attack2" Background="#FF464646" Height="45" Width="125" Margin="10" Foreground="#FFE3791D" Click="SpellClicked"/>
+                        <Button Name="Attack3" Background="#FF464646" Height="45" Width="125" Margin="10" Foreground="#FFE3791D" Click="SpellClicked"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Name="SpellDetails" Visibility="Collapsed">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <TextBlock Name="Spell_Desc" Height="150" Width="150" Margin="0, 0, 10, 0" FontFamily="Comic sans ms" Foreground="#FFE3791D" TextWrapping="Wrap" Text="Description:                           A physical attack in which the user charges and slams into the target with its whole body.">
+                        </TextBlock>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock FontSize="25" Name="Spell_Name" Text="Spell Name: Bulbasaur" Margin="5" FontFamily="Comic sans ms" Foreground="#FFE3791D" />
+                            <TextBlock FontSize="16" Name="Spell_Damage" Text="Base Damage: 10HP" Margin="5" FontFamily="Comic sans ms" Foreground="#FFE3791D"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <Button Height="30" Width="100" Click="GoBack" Margin="10" Content="Back." FontSize="20" Background="#FFE3791D" Foreground="#FFEDEDED"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
